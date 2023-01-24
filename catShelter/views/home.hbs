@@ -1,0 +1,13 @@
+
+<section class="cats">
+    <ul>
+        {{#if allCats}}
+            {{#each allCats}}
+                {{>catCard}}
+            {{/each}}
+        {{else}}
+            <p>Nothing has been listed yet!</p>
+            <p>Accommodate a cat <a href="/addCat">here!</a></p>
+        {{/if}}
+    </ul>
+</section>

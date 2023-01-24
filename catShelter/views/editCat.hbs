@@ -1,0 +1,20 @@
+
+{{#with cat}}
+<form action="/editCat/{{id}}" method="post" class="cat-form">
+    <h2>Edit Cat</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" value="{{name}}">
+    <label for="description">Description</label>
+    <textarea id="description">{{description}}</textarea>
+    <label for="image">Image</label>
+    <input type="file" id="image">
+    <label for="group">Breed</label>
+    <select name="breed" id="group">
+    {{#each allBreeds}}
+        <option value="{{allBreeds}}">{{breed}}</option>
+    {{/each}}
+    </select>
+    <button>Edit Cat</button>
+</form>
+{{/with}}
+
