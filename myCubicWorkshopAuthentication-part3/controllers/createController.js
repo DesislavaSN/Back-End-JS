@@ -9,8 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    console.log('USER: ', req.user._id);
-
     try {
         const result = await createCube(req.body, req.user._id);
         console.log('Result is: ', result);
@@ -21,15 +19,6 @@ router.post('/', async (req, res) => {
             title: 'Request error'
         });
     }
-
-    // const result = await createCube(req.body, req.user._id);
-
-    // if (!req.user || cube.owner != req.user._id) {
-    //     console.log(cube.owner);
-    //     return res.redirect('/auth/login');
-    // }
-
-    // res.redirect('/details/' + result._id);
 });
 
 module.exports = router;
